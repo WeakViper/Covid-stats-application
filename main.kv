@@ -1,0 +1,242 @@
+MDBottomNavigation:
+
+    MDBottomNavigationItem:
+        text:'World'
+        name: 'World'
+        World:
+            Image:
+                source:'world.jpg'
+                pos_hint: {"top":1,"right":1}
+                size_hint:1,0.28
+                allow_stretch: True
+            Label:
+                text: 'WORLD'
+                pos_hint:{'top':0.75,'right':1}
+                size_hint: 1,0.2
+                bold: True
+                color: self.parent.colo
+
+
+            Label:
+                text: 'Total Cases:  ' + (self.parent.case)  + '  (+ ' +  (self.parent.caset) + ')'
+                pos_hint:{'top':0.65,'right':1}
+                size_hint: 1,0.2
+                
+                color: self.parent.colo
+            Label:
+                text: 'Deaths:  ' + (self.parent.death) + '  (+ ' + (self.parent.deatht) + ')'
+                pos_hint:{'top':0.56,'right':1}
+                size_hint: 1,0.2
+                
+                color: 1,0,0,1
+
+            Label:
+                text: 'Recovered:  ' + (self.parent.recover) + '  (+ ' + (self.parent.recovert) + ')'
+                pos_hint:{'top':0.47,'right':1}
+                size_hint: 1,0.2
+                
+                color: 0,1,0,1
+
+            Label:
+                text: 'Active Cases: ' + (self.parent.active)
+                pos_hint:{'top':0.32,'left':1}
+                size_hint: 1,0.1
+                
+                color: self.parent.colo
+            Label:
+                text: 'Total Tests: ' + (self.parent.tests)
+                pos_hint:{'top':0.22,'left':1}
+                size_hint: 1,0.1
+                
+                color: self.parent.colo
+
+
+            Label:
+                text: 'Critical: ' + (self.parent.critical)
+                pos_hint:{'top':0.13,'left':1}
+                size_hint: 1,0.1
+                
+                color: 1,0,0,1
+
+
+
+    MDBottomNavigationItem:
+        text:'Live'
+        name: 'Live'
+        Live:
+            Image:
+                source:'live.jpg'
+                pos_hint: {"top":1,"right":1}
+                size_hint:1,0.28
+                allow_stretch: True
+            Label:
+                text: str(self.parent.place)
+                pos_hint:{'top':0.75,'right':1}
+                size_hint: 1,0.2
+                bold: True
+                color: self.parent.colo
+            Label:
+                text:'Total Cases:  ' + (self.parent.cases)  + '  (+ ' + (self.parent.todayc) + ')'
+                pos_hint:{'top':0.65,'right':1}
+                size_hint: 1,0.2
+                
+                color: self.parent.colo
+
+            Label:
+                text:'Deaths:  ' + (self.parent.deaths) + '  (+ ' + (self.parent.todayd) + ')'
+                pos_hint:{'top':0.56,'right':1}
+                size_hint: 1,0.2
+                
+                color: 1,0,0,1
+            Label:
+                text:'Recovered:  ' + (self.parent.recovered) + '  (+ ' + (self.parent.todayr) + ')'
+                pos_hint:{'top':0.47,'right':1}
+                size_hint: 1,0.2
+                
+                color: 0,1,0,1
+            Label:
+                text: 'Active Cases:  ' + (self.parent.active)
+                pos_hint:{'top':0.32,'left':1}
+                size_hint: 1,0.1
+                
+                color: self.parent.colo
+            Label:
+                text: 'Total Tests:  ' +(self.parent.tests)
+                pos_hint:{'top':0.22,'left':1}
+                size_hint: 1,0.1
+                
+                color: self.parent.colo
+            Label:
+                text: 'Critical:  ' + (self.parent.critical)
+                pos_hint:{'top':0.13,'left':1}
+                size_hint: 1,0.1
+                
+                color: 1,0,0,1
+
+
+    MDBottomNavigationItem:
+        text: 'Search'
+        Search:
+            searchs: countr
+
+            Image:
+                source:'search.jpg'
+                pos_hint: {"top":1,"right":1}
+                size_hint:1,0.25
+                allow_stretch: True
+
+
+            TextInput:
+                id: countr
+                multiline: False
+                background_color: 0,0,0,1
+                cursor_color: 1,1,1,1
+                foreground_color: 1,1,1,1
+                font_color: 1,1,1,1
+                pos_hint:{'top':0.7, 'left':0.7}
+                size_hint: 0.7, 0.07
+                hint_text: "Enter the country you want to search for:"
+
+
+            Button:
+                id:btn
+                text: "Search"
+                pos_hint: {'top': 0.61 , 'right': 0.77}
+                size_hint: 0.25, 0.05
+                background_color: 1,1,1,1
+                on_release:
+                    self.parent.search()
+
+            Label:
+                text: self.parent.place
+                pos_hint: {'top': 0.6, 'left':1}
+                size_hint: 1,0.12
+                bold: True
+                color: self.parent.colo
+            Label:
+                text: 'Confirmed cases:  '+ (self.parent.cases) + '  ' + '(+' + ' ' + (self.parent.todayc) + ')'
+                pos_hint: {'top': 0.51, 'right': 1}
+                size_hint: 1,0.11
+                
+                color: self.parent.colo
+            Label:
+                text: 'Deaths:  '+ (self.parent.deaths) + '  ' + '(+' + ' ' + (self.parent.todayd) + ')'
+                pos_hint: {'top': 0.43, 'right': 1}
+                size_hint: 1,0.11
+                
+                color: 1,0,0,1
+            Label:
+                text: 'Recovered:  '+ (self.parent.recovered) + '  ' + '(+' + ' ' + (self.parent.todayr) + ')'
+                pos_hint: {'top': 0.34, 'right': 1}
+                size_hint: 1,0.11
+                
+                color: 0,1,0,1
+            Label:
+                text: 'Active Cases:  '+ (self.parent.active)
+                pos_hint: {'top': 0.25, 'right': 1}
+                size_hint: 1,0.11
+                
+                color: self.parent.colo
+            Label:
+                text: 'Tests:  ' + (self.parent.tests)
+                pos_hint: {'top': 0.17, 'right': 1}
+                size_hint: 1,0.11
+
+                color: self.parent.colo
+            Label:
+                text: 'Critical:  ' + (self.parent.critical)
+                pos_hint: {'top': 0.09,'right': 1}
+                size_hint: 1,0.11
+
+                color: 1,0,0,1
+
+
+    MDBottomNavigationItem:
+        text:'Options'
+        name: 'Options'
+        Options:
+
+            Image:
+                source:'options.jpg'
+                pos_hint: {"top":1,"right":1}
+                size_hint:1,0.28
+                allow_stretch: True
+
+            Label:
+                text: 'Select Theme:'
+                pos_hint:{'top':0.78,'right':1}
+                size_hint: 1,0.3
+                bold: True
+                color: self.parent.colo
+
+            Button:
+                id:bt
+                text: "Dark"
+                pos_hint: {'top': 0.56 , 'right': 0.63}
+                size_hint: 0.25, 0.06
+                background_color: 1,1,1,1
+                on_release:
+                    self.parent.dark()
+
+            Button:
+                id:btx
+                text: "Light"
+                pos_hint: {'top': 0.47 , 'right': 0.63}
+                size_hint: 0.25, 0.06
+                background_color: 1,1,1,1
+                on_release:
+                    self.parent.light()
+            
+            Label:
+                text: '(app will restart to reflect changes)'
+                pos_hint:{'top':0.46,'right':1}
+                size_hint: 1,0.3
+                color: self.parent.colo
+
+
+
+
+
+
+
+
